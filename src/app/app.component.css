@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(0, 0, 0);
+    justify-content: center;
+    display: flex;
+    align-content: space-evenly;
+    gap:80px;
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
