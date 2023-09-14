@@ -6,6 +6,18 @@
     <title>Document</title>
   </head>
   <body>
+    <input type="text" [(ngModel)]="movie.movietitle" placeholder="Title" />
+
+    <input type="text" [(ngModel)]="movie.src" placeholder="Pic url" />
+
+    <input type="text" [(ngModel)]="movie.alt" />
+
+    <input type="text" [(ngModel)]="movie.moviereleaseyr" />
+
+    <input type="text" [(ngModel)]="movie.movielength" />
+    <input type="text" [(ngModel)]="movie.category" />
+    <input type="text" [(ngModel)]="movie.content" />
+    <button (click)="addMovie($event)">Add Movie</button>
     <app-moviepostercomponent
       *ngFor="let movies of movieList"
       [src]="movies.src"

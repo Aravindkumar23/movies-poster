@@ -7,6 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'movies-poster';
+  movie ={
+    src:"",
+    alt:"",
+    movietitle:"",
+    moviereleaseyr:"",
+    movielength:"",
+    category:"",
+    content:""
+  }
   movieList = [
     {
     src:"https://pbs.twimg.com/media/E4Z_6IdVkAs6dc1.jpg:large",
@@ -38,4 +47,11 @@ export class AppComponent {
     play supporting roles.`,
   }
 ]
+
+
+
+addMovie(event:any){
+  this.movieList.push(this.movie);
+}
+
 }
