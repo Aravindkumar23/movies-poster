@@ -18,7 +18,7 @@ export class AppComponent {
   }
   movieList = [
     {
-    src:"https://pbs.twimg.com/media/E4Z_6IdVkAs6dc1.jpg:large",
+    src:"https://images.news18.com/ibnlive/uploads/2021/06/1624284456_vijay-in-beast.jpg?impolicy=website&width=510&height=356",
     alt:"Beast movie poster",
     movietitle:"Beast",
     moviereleaseyr:"2022",
