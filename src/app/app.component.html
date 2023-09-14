@@ -7,16 +7,17 @@
   </head>
   <body>
     <app-moviepostercomponent
-      src="https://pbs.twimg.com/media/E4Z_6IdVkAs6dc1.jpg:large"
-      alt="Beast movie poster"
-      movietitle="Beast"
-      moviereleaseyr="2022"
-      category="Action/Thriller"
-      movielength="2h 35min"
-      content="hine Tom Chacko as the masked terrorist head, who had hijacked the mall and held people hostage. The trailer also features director-turned-actor Selvaraghavan in the role of an intelligence officer. "
+      *ngFor="let movies of movieList"
+      [src]="movies.src"
+      [alt]="movies.alt"
+      [movietitle]="movies.movietitle"
+      [moviereleaseyr]="movies.moviereleaseyr"
+      [category]="movies.category"
+      [movielength]="movies.movielength"
+      [content]="movies.content"
     >
     </app-moviepostercomponent>
-    <app-moviepostercomponent
+    <!-- <app-moviepostercomponent
       src="https://i1.sndcdn.com/artworks-000136413248-0ehd1f-t500x500.jpg"
       alt="Vedhalam movie poster"
       movietitle="Vedhalam"
@@ -38,7 +39,7 @@
       movielength="2h 39m"
       content="The movie starts  from a slum  hero  had some personal plans while creating the radio channel.When he start to find the secret behind the food corporations and the adulteration in the industry he fight against them"
     >
-    </app-moviepostercomponent>
+    </app-moviepostercomponent> -->
     <!-- <app-moviepostercomponent
     src="https://pbs.twimg.com/media/E4Z_6IdVkAs6dc1.jpg:large"
     alt=""
