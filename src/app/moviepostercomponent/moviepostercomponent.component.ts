@@ -17,4 +17,9 @@ export class MoviepostercomponentComponent {
     category:'',
     content:''
 }
+    value:boolean=true;
+    toggle(){
+      this.value=!this.value
+
+    }
 }

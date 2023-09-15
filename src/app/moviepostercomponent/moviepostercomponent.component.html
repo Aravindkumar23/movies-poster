@@ -8,7 +8,8 @@
     {{ movie.moviereleaseyr }}<b>&#x2022;</b>{{ movie.category }}<b>&#x2022;</b
     >{{ movie.movielength }}
   </h3>
-  <p>
+  <button (click)="toggle()">></button>
+  <p *ngIf="value">
     {{ movie.content }}
   </p>
 </div>
