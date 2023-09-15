@@ -1,14 +1,14 @@
 <!-- <p>moviepostercomponent works!</p> -->
 <div>
-  <img src="{{ src }}" alt="{{ alt }}" />
+  <img [src]="movie.src" [alt]="movie.alt" />
   <h1>
-    <b>{{ movietitle }}</b>
+    <b>{{ movie.movietitle }}</b>
   </h1>
   <h3>
-    {{ moviereleaseyr }}<b>&#x2022;</b>{{ category }}<b>&#x2022;</b
-    >{{ movielength }}
+    {{ movie.moviereleaseyr }}<b>&#x2022;</b>{{ movie.category }}<b>&#x2022;</b
+    >{{ movie.movielength }}
   </h3>
   <p>
-    {{ content }}
+    {{ movie.content }}
   </p>
 </div>

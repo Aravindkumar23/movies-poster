@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { WelcomemsgComponent } from './welcomemsg/welcomemsg.component';
+import { AddformComponent } from './addform/addform.component';
+import { MoviepostercomponentComponent } from './moviepostercomponent/moviepostercomponent.component';
+import { MovielistComponent } from './movielist/movielist.component';
 
-const routes: Routes = [];
+const routes: Routes = [{path:'',redirectTo:'/home',pathMatch:'full'},
+{path:'home',component:WelcomemsgComponent},
+{path:'movies/add',component:AddformComponent},
+{path:'movies',component:MovielistComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

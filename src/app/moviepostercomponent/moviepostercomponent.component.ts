@@ -1,4 +1,6 @@
 import { Component,Input} from '@angular/core';
+import { Movie } from '../app.component';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-moviepostercomponent',
@@ -6,13 +8,13 @@ import { Component,Input} from '@angular/core';
   styleUrls: ['./moviepostercomponent.component.css']
 })
 export class MoviepostercomponentComponent {
- @Input() src = "image";
- @Input() alt ="alternate";
- @Input()  movietitle="title";
- @Input()  moviereleaseyr="year";
- @Input() category ="category";
- @Input() movielength ="movielength";
- @Input() content ="content";
-
-
+  @Input() movie:Movie={
+    src:'',
+    alt:'',
+    movietitle:'',
+    moviereleaseyr:'',
+    movielength:'',
+    category:'',
+    content:''
+}
 }

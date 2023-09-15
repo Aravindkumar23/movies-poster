@@ -6,11 +6,17 @@ import { AppComponent } from './app.component';
 import { MoviepostercomponentComponent } from './moviepostercomponent/moviepostercomponent.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddformComponent } from './addform/addform.component';
+import { WelcomemsgComponent } from './welcomemsg/welcomemsg.component';
+import { MovielistComponent } from './movielist/movielist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoviepostercomponentComponent
+    MoviepostercomponentComponent,
+    AddformComponent,
+    WelcomemsgComponent,
+    MovielistComponent
   ],
   imports: [
     BrowserModule,
