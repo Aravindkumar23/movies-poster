@@ -18,11 +18,11 @@
     >
     </app-moviepostercomponent> -->
     <header>
-      <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/movies">Movies</a></li>
-        <li><a routerLink="/movies/add">Add Movies</a></li>
-      </ul>
+      <mat-toolbar color="primary">
+        <button mat-button routerLink="/">Home</button>
+        <button mat-button routerLink="/movies">Movies</button>
+        <button mat-button routerLink="/movies/add">Add Movies</button>
+      </mat-toolbar>
     </header>
     <router-outlet></router-outlet>
     <!-- <app-moviepostercomponent

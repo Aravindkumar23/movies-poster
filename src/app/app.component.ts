@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 type Movie = {
-      src:string;
-      alt:string;
-      movietitle:string ;
-      moviereleaseyr:number|'';
-      movielength:string ;
-      category:string ;
-      content:string ;
-  }  
+  id: string;
+  name: string;
+  poster: string;
+  rating: number;
+  summary: string;
+  trailer: string;
+};
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

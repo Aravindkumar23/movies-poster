@@ -1,15 +1,51 @@
 <!-- <p>moviepostercomponent works!</p> -->
-<div>
-  <img [src]="movie.src" [alt]="movie.alt" />
-  <h1>
-    <b>{{ movie.movietitle }}</b>
-  </h1>
-  <h3>
-    {{ movie.moviereleaseyr }}<b>&#x2022;</b>{{ movie.category }}<b>&#x2022;</b
-    >{{ movie.movielength }}
-  </h3>
-  <button (click)="toggle()">></button>
-  <p *ngIf="value">
-    {{ movie.content }}
-  </p>
+<div class="movie-container">
+  <img [src]="movie.poster" [alt]="movie.name" class="movie-poster" />
+  <div class="movie-details">
+    <div class="movie-spec">
+      <h2 class="movie-name">
+        {{ movie.name }}
+        <button
+          (click)="toggle()"
+          mat-icon-button
+          color="primary"
+          aria-label="Toggle Summary"
+        >
+          <mat-icon *ngIf="value; else moreIcon">expand_less</mat-icon>
+          <ng-template #moreIcon>
+            <mat-icon>expand_more</mat-icon>
+          </ng-template>
+        </button>
+
+        <!-- <button
+          (click)="gotoMovieDetail()"
+          mat-icon-button
+          color="primary"
+          aria-label="Toggle Summary"
+        >
+          <mat-icon>info</mat-icon>
+        </button> -->
+      </h2>
+      <p class="movie-rating">⭐ {{ movie.rating }}</p>
+    </div>
+
+    <p *ngIf="value" class="movie-summary">{{ movie.summary }}</p>
+    <button
+      (click)="editMovie()"
+      mat-icon-button
+      color="accent"
+      aria-label="Edit Movie"
+    >
+      <mat-icon>edit</mat-icon>
+    </button>
+
+    <button
+      (click)="deleteMovie()"
+      mat-icon-button
+      color="warn"
+      aria-label="Delete Movie"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
 </div>

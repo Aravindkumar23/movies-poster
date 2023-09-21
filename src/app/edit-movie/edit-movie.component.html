@@ -1,5 +1,6 @@
 <section>
-  <form [formGroup]="movieForm" (ngSubmit)="addMovie()" class="form">
+  <h2 color="primary">Edit Movie component</h2>
+  <form [formGroup]="movieForm" (ngSubmit)="editMovie()" class="form">
     <mat-form-field>
       <mat-label>Name</mat-label>
       <input matInput formControlName="name" type="text" placeholder="name" />
@@ -89,9 +90,9 @@
       <mat-icon
         aria-hidden="false"
         aria-label="addMovie"
-        fontIcon="add"
+        fontIcon="save"
       ></mat-icon>
-      {{ "add movie" | uppercase }}
+      {{ "save" | uppercase }}
     </button>
   </form>
 </section>
