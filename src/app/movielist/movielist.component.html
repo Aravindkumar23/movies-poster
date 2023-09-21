@@ -2,5 +2,6 @@
   <app-moviepostercomponent
     *ngFor="let nv of movieList"
     [movie]="nv"
+    (removeMovie)="loadMoviesData()"
   ></app-moviepostercomponent>
 </section>
