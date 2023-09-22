@@ -1,0 +1,24 @@
+<div class="CountButtons">
+  <button
+    mat-icon-button
+    (click)="increment()"
+    matBadge="{{ likeCount }}"
+    matBadgeposition="after"
+    matBadgeColor="primary"
+    [matBadgeHidden]="hidden"
+  >
+    <mat-icon>thumb_up_alt </mat-icon>
+    <!-- <p class="counts">{{ no }}</p> -->
+  </button>
+  <button
+    mat-icon-button
+    (click)="decrement()"
+    matBadge="{{ disLikeCount }}"
+    matBadgeposition="after"
+    matBadgeColor="primary"
+    [matBadgeHidden]="hidden1"
+  >
+    <mat-icon>thumb_down_alt </mat-icon>
+    <!-- <p class="counts">{{ no1 }}</p> -->
+  </button>
+</div>

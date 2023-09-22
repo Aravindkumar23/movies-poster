@@ -20,11 +20,19 @@ export class AddformComponent {
       // content:string = ['',[Validators.required]];
  
   movieForm =this.formBuild.group({
+    id:'',
     name: ['',[Validators.required,Validators.minLength(5)]],
     poster: ['',[Validators.required,Validators.minLength(5),Validators.pattern("^http.*")]],
     rating: [0,[Validators.required,Validators.min(0),Validators.max(10)]],
     summary: ['',[Validators.required,Validators.minLength(20)]],
     trailer: ['',[Validators.required,Validators.minLength(5),Validators.pattern("^http.*")]],
+    like:0,
+    dislike:0,
+    releaseyr:'',
+  censorRating:'',
+  genres:[],
+  languages:[],
+  cast:[],
   })
  constructor(private movieService: MovieService,private formBuild:FormBuilder, private route:Router){
   this.movieList = movieService.movieList;
@@ -63,7 +71,7 @@ export class AddformComponent {
   addMovie(){
     if(this.movieForm.valid){
       const newmovie=this.movieForm.value;
-      this.movieService.createMovie(newmovie as Movie).subscribe(()=>this.route.navigate(['/movies']))
+      this.movieService.createMovie(newmovie as unknown as Movie).subscribe(()=>this.route.navigate(['/movies']))
     }
   }
  

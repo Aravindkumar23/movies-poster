@@ -30,6 +30,12 @@
     </div>
 
     <p *ngIf="value" class="movie-summary">{{ movie.summary }}</p>
+    <app-likecomponent
+      [likeCount]="movie.like"
+      [disLikeCount]="movie.dislike"
+      (updateLike)="updateLike($event)"
+      (updateDislike)="updateDislike($event)"
+    ></app-likecomponent>
     <button
       (click)="editMovie()"
       mat-icon-button

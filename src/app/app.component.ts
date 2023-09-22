@@ -6,6 +6,14 @@ type Movie = {
   rating: number;
   summary: string;
   trailer: string;
+  like:number;
+  dislike:number;
+  releaseyr:string;
+  censorRating:string;
+  genres:Array<string>;
+  languages:Array<string>;
+  cast:Array<string>;
+
 };
 @Component({
   selector: 'app-root',

@@ -2,6 +2,7 @@ import { Component,EventEmitter,Input, Output} from '@angular/core';
 import { Movie } from '../app.component';
 import { MovieService } from '../movie.service';
 import { Router } from '@angular/router';
+import { Subject, debounceTime, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-moviepostercomponent',
@@ -9,8 +10,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./moviepostercomponent.component.css']
 })
 export class MoviepostercomponentComponent {
-constructor(private router:Router,private movieservice:MovieService){}
-  
+constructor(private router:Router,private movieservice:MovieService){
+  this.likeSubject.pipe(debounceTime(2000),switchMap((count) => 
+  {this.movie= {...this.movie,like:count}
+  return this.movieservice.editMovieById(this.movie)}
+  )).subscribe();
+  this.disLikeSubject.pipe(debounceTime(2000),switchMap((count) => 
+  {this.movie= {...this.movie,dislike:count}
+  return this.movieservice.editMovieById(this.movie)}
+  )).subscribe();
+}
+  likeSubject = new Subject<number>;
+  disLikeSubject = new Subject<number>;
   @Input() movie:Movie={
     id:'',
     name:'',
@@ -18,6 +29,13 @@ constructor(private router:Router,private movieservice:MovieService){}
     poster:'',
     summary:'',
     trailer:'',
+    like:0,
+    dislike:0,
+    releaseyr: '',
+  censorRating:'',
+  genres:[],
+  languages:[],
+  cast:[],
 }
 @Output() removeMovie = new EventEmitter();
     value:boolean=true;
@@ -35,4 +53,12 @@ constructor(private router:Router,private movieservice:MovieService){}
         this.router.navigate(['/movies']);
       });
       }
+
+    updateLike(count:number){
+      return this.likeSubject.next(count);
+    }
+    
+    updateDislike(count:number){
+      return this.disLikeSubject.next(count);
+    }
 }

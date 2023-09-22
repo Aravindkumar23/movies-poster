@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatBadgeModule} from '@angular/material/badge';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MoviepostercomponentComponent } from './moviepostercomponent/moviepostercomponent.component';
@@ -15,6 +16,8 @@ import { WelcomemsgComponent } from './welcomemsg/welcomemsg.component';
 import { MovielistComponent } from './movielist/movielist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
+import { LikecomponentComponent } from './likecomponent/likecomponent.component';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import { EditMovieComponent } from './edit-movie/edit-movie.component';
     WelcomemsgComponent,
     MovielistComponent,
     EditMovieComponent,
+    LikecomponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,7 @@ import { EditMovieComponent } from './edit-movie/edit-movie.component';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatToolbarModule,
+    MatToolbarModule,MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

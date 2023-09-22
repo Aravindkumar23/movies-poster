@@ -19,6 +19,13 @@ export class EditMovieComponent {
     rating: 0,
     summary: '',
     trailer: '',
+    like:0,
+    dislike:0,
+    releaseyr: '',
+  censorRating:'',
+  genres:[],
+  languages:[],
+  cast:[],
   };
 
   movieForm =this.formBuild.group({
